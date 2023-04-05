@@ -1,0 +1,58 @@
+.prenom {
+  width: 35px;
+}
+
+.nom {
+  width: 85px;
+}
+
+.salle {
+  width: 62.5px;
+}
+
+.choix {
+  position: absolute;
+  left: 65px;
+  top: 0%;
+}
+
+.horaire {
+  border: solid;
+  width: 50px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.oua {
+  margin-bottom: 15px;
+}
+
+.hide {
+  display: none;
+}
+
+.pio {
+  margin-bottom: 40px;
+}
+
+.plo {
+  position: absolute;
+  left: 230px;
+  width: 100px;
+}
+
+.plobis {
+  position: absolute;
+  left: 340px;
+}
+
+
+.yes {
+  transition-duration: 0.5s;
+  background-color: #3DD621;
+}
+
+.no {
+  transition-duration: 0.5s;
+  background-color: #ED6D5D;
+}

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>LYCEE DE LA VERSOIE LEGT - PRONOTE - Espace Élèves</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="theme-color" content="#22874b" />
+  </head>
+  <header></header>
+  <body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <div id="div" data-role="page" class="NePasImprimer ThemeMobilePN" style="height:100%">
+      <div id="GInterface.Instances[2]" class="navbar-fixed "><nav>
+        <div class="nav-wrapper design-2021">
+          <div class="header-gauche">
+            <div class="photo-circle"><img src="#"  id="ima">
+            </div>
+          </div>
+          <div class="header-droit">
+            <div class="infos-container" tabindex="0" role="heading" id="GInterface.Instances[2]_Titre"><h1 id="lenom"></h1><h2>Emploi du temps</h2>
+            </div>
+            <ul class="btn-container">
+              <li id="GInterface.Instances[2]_Btn_Valider" style="display: none;"><a class="btn-menu icon_ok" role="button" onclick="GInterface.Instances[2].surClickBouton(2)"></a></li>
+              <li id="GInterface.Instances[2]_Btn_Accueil" onclick="window.open('../accueil/accueil.html', '_self')"><a onclick="window.open('../accueil/accueil.html', '_self')" class="btn-menu icon_home" aria-label="Accueil"><span class="WAI_hidden ">Accueil</span></a></li>
+              <li id="GInterface.Instances[2]_Btn_MenuOnglets"><a class="btn-menu icon_menu_burger" id="GInterface.Instances[2]_Lien_MenuOnglets" role="button" onclick="GInterface.Instances[2].surClickBouton(4)"><span class="WAI_hidden">Menu Principal</span></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      </div>
+      
+      <div class="content-mobile-wrapper">
+        <div id="GInterface_zoneSelection"  class="objetInterfaceMobile_zoneSelection">
+          <div id="GInterface.Instances[0].Instances[0]">
+            <div id="GInterface.Instances[0].Instances[0]_CalendrierMobile" class="nav-secondary-contain selection-calendrier">
+              <button id="GInterface.Instances[0].Instances[0]_JourPrecedent" class=" btn-flat btn-floating" title="Jour précédent" onclick="changer('p')">
+                <i class="material-icons icon_angle_left"></i>
+              </button>
+              <button id="datee" class="btn-flat libelle-contain"></button>
+              <button id="GInterface.Instances[0].Instances[0]_JourSuivant" class=" btn-flat btn-floating" title="Jour suivant" onclick="changer('s')">
+                <i class="material-icons icon_angle_right"></i>
+              </button>
+              <div id="GInterface.Instances[0].Instances[0]_Selecteur" style="display:none;">
+              </div>
+            </div>
+          </div>
+        </div>
+<!-- partie inférieur -->
+        <div id="GInterface_zonePrincipale" role="main" class="objetInterfaceMobile_zonePrincipale">
+<!-- emploi du temps --> 
+          <ul class="collection collection-listecours bg-white" id="edtajd">
+            
+            <li class="collection-item collection-cours hide" id="cours0un">
+              <div class="horaire-container"><span id="heure0un"></span><span id="heure0unbis"></span></div>
+              
+              <div class="li-wrapper" style="border-color:#A12A5F" id="color0un">
+                <div class="item matiere" id="mati0un"></div>
+                <div class="item" id="prof0un"></div>
+                <div class="item hide" id="grp0un"></div>
+                <div class="item" id="salle0un"></div>
+              </div>
+            
+            </li>
+
+            <li class="collection-item collection-cours hide" id="cours0deux">
+              <div class="horaire-container"><span id="heure0deux"></span><span id="heure0deuxbis"></span></div>
+              <div class="li-wrapper" style="border-color: #A12A5F;" id="color0deux">
+                <div class="item matiere" id="mati0deux"></div>
+                <div class="item" id="prof0deux"></div>
+                <div class="item hide" id="grp0deux"></div>
+                <div class="item" id="salle0deux"></div>
+              </div>
+            </li>
+            
+            <li class="collection-item collection-cours hide" id="cours0trois">
+              <div class="horaire-container"><span id="heure0trois"></span><span id="heure0troisbis"></span></div>
+              
+              <div class="li-wrapper" style="border-color: #D3F719;" id="color0trois">
+                
+                <div class="item matiere" id="mati0trois"></div>
+                <div class="item" id="prof0trois"></div>
+                <div class="item hide" id="grp0trois"></div>
+                <div class="item" id="salle0trois"></div></div>
+            </li>
+            
+            
+            
+            <li class="collection-item collection-cours hide" id="cours0quatre">
+              <div class="horaire-container"><span id="heure0quatre"></span><span id="heure0quatrebis"></span></div>
+              <div class="li-wrapper" style="border-color: #698C50;" id="color0quatre">
+                <div class="item matiere" id="mati0quatre"></div>
+                <div class="item" id="prof0quatre"></div>
+                <div class="item hide" id="grp0quatre"></div>
+                <div class="item" id="salle0quatre"></div>
+              </div>
+            </li>
+            
+            <li class="collection-item collection-cours hide" id="cours0cinq">
+              <div class="horaire-container"><span id="heure0cinq"></span><span id="heure0cinqbis"></span></div>
+              <div class="li-wrapper" style="border-color: #596E05;" id="color0cinq">
+                <div class="item matiere" id="mati0cinq"></div>
+                <div class="item" id="prof0cinq"></div>
+                <div class="item hide" id="grp0cinq"></div>
+                <div class="item" id="salle0cinq"></div>
+              </div>
+            </li>
+
+            <li class="collection-item collection-cours hide" id="cours0six">
+              <div class="horaire-container"><span id="heure0six"></span><span id="heure0sixbis"></span></div>
+              <div class="li-wrapper" style="border-color: #596E05;" id="color0six">
+                <div class="item matiere" id="mati0six"></div>
+                <div class="item" id="prof0six"></div>
+                <div class="item hide" id="grp0six"></div>
+                <div class="item" id="salle0six"></div>
+              </div>
+            </li>
+
+            <li class="collection-item collection-cours hide" id="cours0sept">
+              <div class="horaire-container"><span id="heure0sept"></span><span id="heure0septbis"></span></div>
+              <div class="li-wrapper" style="border-color: #596E05;" id="color0sept">
+                <div class="item matiere" id="mati0sept"></div>
+                <div class="item" id="prof0sept"></div>
+                <div class="item hide" id="grp0sept"></div>
+                <div class="item" id="salle0sept"></div>
+              </div>
+            </li>
+
+            <li class="collection-item collection-cours hide" id="cours0huit">
+              <div class="horaire-container"><span id="heure0huit"></span><span id="heure0huitbis"></span></div>
+              <div class="li-wrapper" style="border-color: #596E05;" id="color0huit">
+                <div class="item matiere" id="mati0huit"></div>
+                <div class="item" id="prof0huit"></div>
+                <div class="item hide" id="grp0huit"></div>
+                <div class="item" id="salle0huit"></div>
+              </div>
+            </li>
+
+            <li class="collection-item collection-cours hide" id="cours0neuf">
+              <div class="horaire-container"><span id="heure0neuf"></span><span id="heure0neufbis"></span></div>
+              <div class="li-wrapper" style="border-color: #596E05;" id="color0neuf">
+                <div class="item matiere" id="mati0neuf"></div>
+                <div class="item" id="prof0neuf"></div>
+                <div class="item hide" id="grp0neuf"></div>
+                <div class="item" id="salle0neuf"></div>
+              </div>
+            </li>
+
+  
+</ul>
+
+<!-- edt suivant -->
+          <ul class="collection collection-listecours bg-white hide" id="edtsui">
+            
+            <li class="collection-item collection-cours hide" id="cours1un">
+              <div class="horaire-container"><span id="heure1un"></span><span id="heure1unbis"></span></div>
+              
+              <div class="li-wrapper" style="border-color: #B3ABDA;" id="color1un">
+                <div class="item matiere" id="mati1un"></div>
+                <div class="item" id="prof1un"></div>
+                <div class="item hide" id="grp1un"></div>
+                <div class="item" id="salle1un"></div>
+              </div>      
+            </li>
+
+            
+
+            <li class="collection-item collection-cours hide" id="cours1deux">
+              <div class="horaire-container"><span id="heure1deux"></span><span id="heure1deuxbis"></span></div>
+              <div class="li-wrapper" style="border-color: #4031CC;" id="color1deux">
+                <div class="item matiere" id="mati1deux"></div>
+                <div class="item" id="prof1deux"></div>
+                <div class="item hide" id="grp1deux"></div>
+                <div class="item" id="salle1deux"></div>
+              </div>
+            </li>
+            
+            
+            
+            <li class="collection-item collection-cours hide" id="cours1trois">
+              <div class="horaire-container"><span id="heure1trois"></span><span id="heure1troisbis"></span></div>
+              <div class="li-wrapper" style="border-color: #A12A5F;" id="color1trois">
+                <div class="item matiere" id="mati1trois"></div>
+                <div class="item" id="prof1trois"></div>
+                <div class="item hide" id="grp1trois"></div>
+                <div class="item" id="salle1trois"></div>
+              </div>
+            </li>
+            
+            <li class="collection-item collection-cours hide" id="cours1quatre">
+              <div class="horaire-container"><span id="heure1quatre"></span><span id="heure1quatrebis"></span></div>
+              <div class="li-wrapper" style="border-color: #596E05;" id="color1quatre">
+                <div class="item matiere" id="mati1quatre"></div>
+                <div class="item" id="prof1quatre"></div>
+                <div class="item hide" id="grp1quatre"></div>
+                <div class="item" id="salle1quatre"></div>
+              </div>
+            </li>
+
+            <li class="collection-item collection-cours hide" id="cours1cinq">
+              <div class="horaire-container"><span id="heure1cinq"></span><span id="heure1cinqbis"></span></div>
+              <div class="li-wrapper" style="border-color: #596E05;" id="color1cinq">
+                <div class="item matiere" id="mati1cinq"></div>
+                <div class="item" id="prof1cinq"></div>
+                <div class="item hide" id="grp1cinq"></div>
+                <div class="item" id="salle1cinq"></div>
+              </div>
+            </li>
+
+            <li class="collection-item collection-cours hide" id="cours1six">
+              <div class="horaire-container"><span id="heure1six"></span><span id="heure1sixbis"></span></div>
+              <div class="li-wrapper" style="border-color: #596E05;" id="color1six">
+                <div class="item matiere" id="mati1six"></div>
+                <div class="item" id="prof1six"></div>
+                <div class="item hide" id="grp1six"></div>
+                <div class="item" id="salle1six"></div>
+              </div>
+            </li>
+
+            <li class="collection-item collection-cours hide" id="cours1sept">
+              <div class="horaire-container"><span id="heure1sept"></span><span id="heure1septbis"></span></div>
+              <div class="li-wrapper" style="border-color: #596E05;" id="color1sept">
+                <div class="item matiere" id="mati1sept"></div>
+                <div class="item" id="prof1sept"></div>
+                <div class="item hide" id="grp1sept"></div>
+                <div class="item" id="salle1sept"></div>
+              </div>
+            </li>
+
+            <li class="collection-item collection-cours hide" id="cours1huit">
+              <div class="horaire-container"><span id="heure1huit"></span><span id="heure1huitbis"></span></div>
+              <div class="li-wrapper" style="border-color: #596E05;" id="color1huit">
+                <div class="item matiere" id="mati1huit"></div>
+                <div class="item" id="prof1huit"></div>
+                <div class="item hide" id="grp1huit"></div>
+                <div class="item" id="salle1huit"></div>
+              </div>
+            </li>
+
+            <li class="collection-item collection-cours hide" id="cours1neuf">
+              <div class="horaire-container"><span id="heure1neuf"></span><span id="heure1neufbis"></span></div>
+              <div class="li-wrapper" style="border-color: #596E05;" id="color1neuf">
+                <div class="item matiere" id="mati1neuf"></div>
+                <div class="item" id="prof1neuf"></div>
+                <div class="item hide" id="grp1neuf"></div>
+                <div class="item" id="salle1neuf"></div>
+              </div>
+            </li>
+  
+</ul>
+
+
+<!-- edt precedent -->
+          <ul class="collection collection-listecours bg-white hide" id="edtpre">
+
+            
+            
+            <li class="collection-item collection-cours hide" id="cours2un">
+              <div class="horaire-container"><span id="heure2un"></span><span id="heure2unbis"></span></div>
+              
+              <div class="li-wrapper" style="border-color: #F1C57D;" id="color2un">
+                
+                <div class="item matiere" id="mati2un"></div>
+                <div class="item" id="prof2un"></div>
+                <div class="item hide" id="grp2un"></div>
+                <div class="item" id="salle2un"></div></div>
+            </li>
+
+            <li class="collection-item collection-cours hide" id="cours2deux">
+              <div class="horaire-container"><span id="heure2deux"></span><span id="heure2deuxbis"></span></div>
+              <div class="li-wrapper" style="border-color: #56D487;" id="color2deux">
+                <div class="item matiere" id="mati2deux"></div>
+                <div class="item" id="prof2deux"></div>
+                <div class="item hide" id="grp2deux"></div>
+                <div class="item" id="salle2deux"></div>
+              </div>
+            </li>
+
+            
+            
+            <li class="collection-item collection-cours hide" id="cours2trois">
+              <div class="horaire-container"><span id="heure2trois"></span><span id="heure2troisbis"></span></div>
+              
+              <div class="li-wrapper" style="border-color: #4031CC;" id="color2trois">
+                
+                <div class="item matiere" id="mati2trois"></div>
+                <div class="item" id="prof2trois"></div>
+                <div class="item hide" id="grp2trois"></div>
+                <div class="item" id="salle2trois"></div></div>
+            </li>
+  
+            
+            <li class="collection-item collection-cours hide" id="cours2quatre">
+              <div class="horaire-container"><span id="heure2quatre"></span><span id="heure2quatrebis"></span></div>
+              
+              <div class="li-wrapper" style="border-color: #B3ABDA;" id="color2quatre">
+                <div class="item matiere" id="mati2quatre"></div>
+                <div class="item" id="prof2quatre"></div>
+                <div class="item hide" id="grp2quatre"></div>
+                <div class="item" id="salle2quatre"></div>
+              </div>
+            
+            </li>
+
+            <li class="collection-item collection-cours hide" id="cours2cinq">
+              <div class="horaire-container"><span id="heure2cinq"></span><span id="heure2cinqbis"></span></div>
+              <div class="li-wrapper" style="border-color: #596E05;" id="color2cinq">
+                <div class="item matiere" id="mati2cinq"></div>
+                <div class="item" id="prof2cinq"></div>
+                <div class="item hide" id="grp2cinq"></div>
+                <div class="item" id="salle2cinq"></div>
+              </div>
+            </li>
+
+            <li class="collection-item collection-cours hide" id="cours2six">
+              <div class="horaire-container"><span id="heure2six"></span><span id="heure2sixbis"></span></div>
+              <div class="li-wrapper" style="border-color: #596E05;" id="color2six">
+                <div class="item matiere" id="mati2six"></div>
+                <div class="item" id="prof2six"></div>
+                <div class="item hide" id="grp2six"></div>
+                <div class="item" id="salle2six"></div>
+              </div>
+            </li>
+
+            <li class="collection-item collection-cours hide" id="cours2sept">
+              <div class="horaire-container"><span id="heure2sept"></span><span id="heure2septbis"></span></div>
+              <div class="li-wrapper" style="border-color: #596E05;" id="color2sept">
+                <div class="item matiere" id="mati2sept"></div>
+                <div class="item" id="prof2sept"></div>
+                <div class="item hide" id="grp2sept"></div>
+                <div class="item" id="salle2sept"></div>
+              </div>
+            </li>
+
+            <li class="collection-item collection-cours hide" id="cours2huit">
+              <div class="horaire-container"><span id="heure2huit"></span><span id="heure2huitbis"></span></div>
+              <div class="li-wrapper" style="border-color: #596E05;" id="color2huit">
+                <div class="item matiere" id="mati2huit"></div>
+                <div class="item" id="prof2huit"></div>
+                <div class="item hide" id="grp2huit"></div>
+                <div class="item" id="salle2huit"></div>
+              </div>
+            </li>
+
+            <li class="collection-item collection-cours hide" id="cours2neuf">
+              <div class="horaire-container"><span id="heure2neuf"></span><span id="heure2neufbis"></span></div>
+              <div class="li-wrapper" style="border-color: #596E05;" id="color2neuf">
+                <div class="item matiere" id="mati2neuf"></div>
+                <div class="item" id="prof2neuf"></div>
+                <div class="item hide" id="grp2neuf"></div>
+                <div class="item" id="salle2neuf"></div>
+              </div>
+            </li>
+
+            
+</ul>
+      
+   
+<div class="popo" onclick="window.open('../index.html', '_self')" ><i class="icon icon_pdf"></i></div>
+    <script src="script1.js"></script>
+  </body>
+      <div id="caca"></div> 
+</html>

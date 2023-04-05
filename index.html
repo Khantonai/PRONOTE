@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr_FR"><head>
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <title>Bienvenue sur votre Environnement Numérique de Travail - Authentification</title>
+        <meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="st.css"><link rel="stylesheet"><link rel="stylesheet" href="stb.css"><link rel="icon" href="/static/favicon.ico" type="image/x-icon"></head>
+        
+    <body class="cas">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <main>
+
+            <header class="color--comp--dark panel text--center cas__header">
+    <a href="/" title="Retour à l'accueil du service d'authentification" class="cas__header-link">
+        <img src="logo.png" id="authentification_logo" alt="Logo Skolengo" class="cas__header-logo media-responsive"><span class="screen-reader-text">Retour à l'accueil du service d'authentification</span>
+    </a>
+
+</header>
+            <div class="container cas__container">
+                <div class="row">
+                    <div class="col col--xs-12 col--sm-10 push--sm-1 col--md-8 push--md-2 col--lg-6 push--lg-3 col--xl-4 push--xl-4 cas__col">
+                        <div class="panel panel--outlined cas__panel">
+                            <div class="panel__body">
+                                <h1 class="screen-reader-text cas__wayf-title">S'authentifier en tant que</h1>
+
+<p class="cas__wayf-message" id="pol">Vous voulez vous connecter à l'ENT en tant que :</p>
+
+<form action="/login" method="get" class="cas__wayf-form">
+
+    <div>
+            <div class="cas__wayf-idp h5-like"><span class="space space--sm"></span>
+                <input type="radio" name="selection" class="js-wayf-composant" id="idp-EDU" value="EDU" onclick="choix(1)"><label for="idp-EDU" class="form__label">Elève ou parent avec EduConnect</label>
+            </div>
+            </div>
+
+        <hr class="divider"><fieldset class="form__fieldset cas__wayf-categorie">
+            <legend class="form__legend">
+                <button type="button" class="btn btn--naked js-wayftoggle btn--lg btn--as-link btn--full" aria-expanded="false" onclick="afficher('listun', 'plusun')">
+                    <span class="icon js-icon icon--plus" id="plusun"></span>
+                Elève ou parent sans EduConnect</button></legend>
+            <ul class="list-radio list--padding-left-sm js-wayfchoices hide" id="listun">
+<li>
+        <div class="cas__wayf-categorie">
+            <input type="radio" name="selection" class="js-wayf-composant" id="idp-LYON-ATS_parent_eleve" value="LYON-ATS_parent_eleve" onclick="choix(2)" onchange="appa('infobis')"><label for="idp-LYON-ATS_parent_eleve" class="form__label">de l’académie de Lyon</label>
+        </div>
+        </li>
+        <div id="infobis" class="hide">
+  <li><input type="text" id="lipro" placeholder="lien"></li>
+  <br>
+  <li><input type="file" accept='image/*' id="fphoto"></li>
+    <br>
+  </div>
+  
+<li>
+        <div class="cas__wayf-categorie">
+            <input type="radio" name="selection" class="js-wayf-composant" id="idp-GRE-ATS_parent_eleve" value="GRE-ATS_parent_eleve" onclick="choix(3)"><label for="idp-GRE-ATS_parent_eleve" class="form__label">de l’académie de Grenoble</label>
+        </div>
+        </li>
+<li>
+        <div class="cas__wayf-categorie">
+            <input type="radio" name="selection" class="js-wayf-composant" id="idp-CLERMONT-ATS_parent_eleve" value="CLERMONT-ATS_parent_eleve" onclick="choix(4)" onchange="appa('info')"><label for="idp-CLERMONT-ATS_parent_eleve" class="form__label">de l’académie de Clermont-Ferrand</label>
+        </div>
+        </li>
+        <div id="info" class="hide">
+        <b>1) Photo</b> <br>
+         - Se connecter à PRONOTE : passer par l'académie de GRENOBLE ou par EduConnect <br>
+         - Maintenir la photo et l'enregistrer dans sa galerie <br>
+         <br>
+         <b>2) Créer l'emploi du temps</b> <br>
+         - Passer par Enseignement agricole pour créer l'emploi du temps <br>
+         <br>
+         <b>3) Générer l'emploi du temps</b> <br>
+         - Passer par l'académie de LYON pour générer l'emploi du temps <br>
+         - Coller le lien de l'emploi du temps <br>
+         - Sélectionner la photo <br>
+         - Si la photo ne marche pas, passer par la sauvegarde <br>
+         <br>
+         <b>3 bis) Générer l'emploi du temps sans lien</b> <br>
+         - Passer par l'académie de LYON pour générer l'emploi du temps <br>
+         - Dans le champ du lien écrire le nom suivi du prénom, séparé par une virgule <br>
+         - Sélectionner la photo <br>
+         <br>
+            <b>4) Sauvegarder pour gagner du temps la prochaine fois</b> <br>
+            - Pour créer une sauvegarde, passer par l'académie de LYON Enseignant <br>
+            - Coller le lien de l'emploi du temps <br>
+            - Sélectionner la photo <br>
+            - Choisir un nom pour la sauvegarde <br>
+            <br>
+            - Pour charger une sauvegarde, passer par l'académie de GRENOBLE Enseignant <br>
+            - Sélectionner la sauvegarde
+  </div>
+
+</ul>
+        </fieldset>
+
+        <hr class="divider"><div>
+            <div class="cas__wayf-idp h5-like"><span class="space space--sm"></span>
+                <input type="radio" name="selection" class="js-wayf-composant" id="idp-DRAAF_parent_eleve" value="DRAAF_parent_eleve" onclick="choix(5)"><label for="idp-DRAAF_parent_eleve" class="form__label">Enseignement agricole</label>
+            </div>
+            </div>
+
+        <hr class="divider"><fieldset class="form__fieldset cas__wayf-categorie">
+            <legend class="form__legend">
+                <button type="button" class="btn btn--naked js-wayftoggle btn--lg btn--as-link btn--full" aria-expanded="false" onclick="afficher('listdeux', 'plusdeux')">
+                    <span class="icon js-icon icon--plus" id="plusdeux"></span>
+                Enseignant</button></legend>
+                
+                <ul class="list-radio list--padding-left-sm js-wayfchoices hide" id="listdeux">
+                    <li>
+                            <div class="cas__wayf-categorie">
+                                <input type="radio" name="selection" class="js-wayf-composant" id="idp-LYON-ATS_parent_elevebis" value="LYON-ATS_parent_eleve" onclick="choix(6)" onchange="appa('sauver')"><label for="idp-LYON-ATS_parent_elevebis" class="form__label">de l’académie de Lyon</label>
+                            </div>
+                            </li>
+                            <div id="sauver" class="hide">
+                                <li><input type="text" id="lisave" placeholder="lien"> <input type="file" accept='image/*' id="fphotobis"></li>
+                                <br><li><input type="text" placeholder="nom de la sauvegarde" id="namesave"> <input type="button" value="Sauvegarder" id="save" onclick="svgd()" class="ok"></li>
+                                  <br>
+                                </div>
+                      
+                    <li>
+                            <div class="cas__wayf-categorie">
+                                <input type="radio" name="selection" class="js-wayf-composant" id="idp-GRE-ATS_parent_elevebis" value="GRE-ATS_parent_eleve" onclick="choix(7)" onchange="appa('lol')"><label for="idp-GRE-ATS_parent_elevebis" class="form__label">de l’académie de Grenoble</label>
+                            </div>
+                            </li>
+                            <div id="lol" class="hide">
+                                <li id="cc"><span id="ns"></span> <input type="button" id="paste" value="Sélectionner" onclick="charger()"></li>
+                      </div>
+                    
+                    </ul>
+        </fieldset>
+
+
+        <hr class="divider"><fieldset class="form__fieldset cas__wayf-categorie">
+            <legend class="form__legend">
+                <button type="button" class="btn btn--naked js-wayftoggle btn--lg btn--as-link btn--full" aria-expanded="false">
+                    <span class="icon js-icon icon--plus"></span>
+                Personnel non enseignant</button></legend>
+            
+        </fieldset>
+
+
+        <hr class="divider"><fieldset class="form__fieldset cas__wayf-categorie">
+            <legend class="form__legend">
+                <button type="button" class="btn btn--naked js-wayftoggle btn--lg btn--as-link btn--full" aria-expanded="false">
+                    <span class="icon js-icon icon--plus"></span>
+                Personnels de collectivité</button></legend>
+            
+        </fieldset>
+
+
+        <hr class="divider"><div>
+            <div class="cas__wayf-idp h5-like"><span class="space space--sm"></span>
+                <input type="radio" name="selection" class="js-wayf-composant" id="idp-ENT" value="ENT" data-memorisable="true"><label for="idp-ENT" class="form__label">Autres comptes et invités</label>
+            </div>
+            </div>
+
+        <hr class="divider slug slug--xs"><div class="text--right cas__wayf-submit">
+        <input type="hidden" name="service" value="https://www.ent.auvergnerhonealpes.fr/"><input id="btnval" type="button" name="submit" value="Valider" class="btn btn--primary" onclick="valid()"></div>
+
+</form>
+
+<script src="wayf.js"></script>
+        </div>
+                        </div>
+                    </div>
+                    <div class="col col--xs-12 col--sm-10 push--sm-1 col--md-8 push--md-2 col--lg-3 push--lg-0 cas__col"><div class="msg msg--information"><div class="msg__body"><div class="msg__title">Informations aux Parents et Elèves</div><div class="msg__content">Les élèves et les parents invités par leur établissement à utiliser EduConnect peuvent s’authentifier par l’entrée « Elève ou parent avec EduConnect ». <br><br>Si vous avez une question ou une difficulté concernant votre accès Educonnect, vous disposez d'un accompagnement : <a href="https://educonnect.education.gouv.fr/educt-aide/contacts/">https://educonnect.education.gouv.fr/educt-aide/contacts/</a></div></div></div></div>
+                </div>
+            </div>
+        </main>
+
+        
+
+
+</body></html>

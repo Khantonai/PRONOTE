@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Créateur de profil</title>
+    <link href="cdp.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <input type="text" placeholder="nom" id="nomuser" class="plo"onchange="glien()"><input type="text" placeholder="prénom" id="prenomuser" class="plo" style="top: 30px;"onchange="glien()">
+    <input type="button" value="Aujourd'hui" style="position: absolute; left: 230px; top: 55px;" id="change" onclick="chg()">
+    <input type="text" id="acopie" placeholder="Lien" readonly class="plo" style="top: 80px;"><input type="button" value="Copier" onclick="copie('acopie')" id="bcopie" class="plobis" style="top: 80px;">
+    <input type="button" value="Retourner au portail" class="plo" style="top: 105px; width: 130px;" onclick="window.open('../index.html', '_self')">
+    <input type="button" value="Recharger" class="plo" style="top: 130px; width: 130px;" onclick="location.reload()">
+
+    <section>
+      <div id="horaireun" class="horaire">
+        <span id="heureun">8H00</span>
+        <br>
+        <span id="heureunbis">9H00</span>
+      </div>
+      <div id="horairedeux" class="horaire hide">
+        <span id="heuredeux"></span>
+        <br>
+        <span id="heuredeuxbis"></span>
+      </div>
+      <div id="horairetrois" class="horaire hide">
+        <span id="heuretrois"></span>
+        <br>
+        <span id="heuretroisbis"></span>
+      </div>
+      <div id="horairequatre" class="horaire hide">
+        <span id="heurequatre"></span>
+        <br>
+        <span id="heurequatrebis"></span>
+      </div>
+      <div id="horairecinq" class="horaire hide">
+        <span id="heurecinq"></span>
+        <br>
+        <span id="heurecinqbis"></span>
+      </div>
+      <div id="horairesix" class="horaire hide">
+        <span id="heuresix"></span>
+        <br>
+        <span id="heuresixbis"></span>
+      </div>
+      <div id="horairesept" class="horaire hide">
+        <span id="heuresept"></span>
+        <br>
+        <span id="heureseptbis"></span>
+      </div>
+      <div id="horairehuit" class="horaire hide">
+        <span id="heurehuit"></span>
+        <br>
+        <span id="heurehuitbis"></span>
+      </div>
+      <div id="horaireneuf" class="horaire hide">
+        <span id="heureneuf"></span>
+        <br>
+        <span id="heureneufbis"></span>
+      </div>
+      <div id="horairedix" class="horaire hide">
+        <span id="heuredix"></span>
+        <br>
+        <span id="heuredixbis"></span>
+      </div>
+    </section>
+
+    <section class="choix">
+      <div id="listeun" class="oua" style="margin-top: 7px;">
+        <select id="coursun" onchange="ajour('un')">
+          <option>H-G</option>
+          <option>Anglais</option>
+          <option>Allemand</option>
+          <option>Espagnol</option>
+          <option>HGGSP</option>
+          <option>SVT</option>
+          <option>ES</option>
+          <option>Philo</option>
+          <option>EPS</option>
+          <option>EMC</option>
+          <option>MATH</option>
+          <option>SES</option>
+          <option>Pas de cours</option>
+        </select>
+        <select id="dureeun" onchange="ajour('un')">
+          <option>1h</option>
+          <option id="2hun">2h</option>
+        </select>
+        <br>
+        <input type="text" placeholder="nom" id="nomun" class="nom" onchange="ajour('un')">
+        <input type="text" placeholder="prénom" id="prenomun" maxlength="1" class="prenom" onchange="ajour('un')">
+        <br>
+        <input type="number" pattern="[0-9]*" id="salleun" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="salle" class="salle" max="340" min="0" onchange="ajour('un')"><input type="text" placeholder="groupe" class="salle hide" id="grpun" onchange="ajour('un')">
+      </div>
+      <div id="listedeux" class="oua hide">
+        <select id="coursdeux" onchange="ajour('deux')">
+          <option>H-G</option>
+          <option>Anglais</option>
+          <option>Allemand</option>
+          <option>Espagnol</option>
+          <option>HGGSP</option>
+          <option>SVT</option>
+          <option>ES</option>
+          <option>Philo</option>
+          <option>EPS</option>
+          <option>EMC</option>
+          <option>MATH</option>
+          <option>SES</option>
+          <option>Pas de cours</option>
+        </select>
+        <select id="dureedeux" onchange="ajour('deux')">
+          <option>1h</option>
+          <option id="2hdeux">2h</option>
+        </select>
+        <br>
+        <input type="text" placeholder="nom" id="nomdeux" class="nom" onchange="ajour('deux')">
+        <input type="text" placeholder="prénom" id="prenomdeux" maxlength="1" class="prenom" onchange="ajour('deux')">
+        <br>
+        <input type="number" pattern="[0-9]*" id="salledeux" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="salle" class="salle" max="340" min="0" onchange="ajour('deux')"><input type="text" placeholder="groupe" class="salle hide" id="grpdeux" onchange="ajour('deux')">
+      </div>
+      <div id="listetrois" class="oua hide">
+        <select id="courstrois" onchange="ajour('trois')">
+          <option>H-G</option>
+          <option>Anglais</option>
+          <option>Allemand</option>
+          <option>Espagnol</option>
+          <option>HGGSP</option>
+          <option>SVT</option>
+          <option>ES</option>
+          <option>Philo</option>
+          <option>EPS</option>
+          <option>EMC</option>
+          <option>MATH</option>
+          <option>SES</option>
+          <option>Pas de cours</option>
+        </select>
+        <select id="dureetrois" onchange="ajour('trois')">
+          <option>1h</option>
+          <option id="2htrois">2h</option>
+        </select>
+        <br>
+        <input type="text" placeholder="nom" id="nomtrois" class="nom" onchange="ajour('trois')">
+        <input type="text" placeholder="prénom" id="prenomtrois" maxlength="1" class="prenom" onchange="ajour('trois')">
+        <br>
+        <input type="number" pattern="[0-9]*" id="salletrois" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="salle" class="salle" max="340" min="0" onchange="ajour('trois')"><input type="text" placeholder="groupe" class="salle hide" id="grptrois" onchange="ajour('trois')">
+      </div>
+      <div id="listequatre" class="oua hide">
+        <select id="coursquatre" onchange="ajour('quatre')">
+          <option>H-G</option>
+          <option>Anglais</option>
+          <option>Allemand</option>
+          <option>Espagnol</option>
+          <option>HGGSP</option>
+          <option>SVT</option>
+          <option>ES</option>
+          <option>Philo</option>
+          <option>EPS</option>
+          <option>EMC</option>
+          <option>MATH</option>
+          <option>SES</option>
+          <option>Pas de cours</option>
+        </select>
+        <select id="dureequatre" onchange="ajour('quatre')">
+          <option>1h</option>
+          <option id="2hquatre">2h</option>
+        </select>
+        <br>
+        <input type="text" placeholder="nom" id="nomquatre" class="nom" onchange="ajour('quatre')">
+        <input type="text" placeholder="prénom" id="prenomquatre" maxlength="1" class="prenom" onchange="ajour('quatre')">
+        <br>
+        <input type="number" pattern="[0-9]*" id="sallequatre" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="salle" class="salle" max="340" min="0" onchange="ajour('quatre')"><input type="text" placeholder="groupe" class="salle hide" id="grpquatre" onchange="ajour('quatre')">
+      </div>
+      <div id="listecinq" class="oua hide">
+        <select id="courscinq" onchange="ajour('cinq')">
+          <option>H-G</option>
+          <option>Anglais</option>
+          <option>Allemand</option>
+          <option>Espagnol</option>
+          <option>HGGSP</option>
+          <option>SVT</option>
+          <option>ES</option>
+          <option>Philo</option>
+          <option>EPS</option>
+          <option>EMC</option>
+          <option>MATH</option>
+          <option>SES</option>
+          <option>Pas de cours</option>
+        </select>
+        <select id="dureecinq" onchange="ajour('cinq')">
+          <option>1h</option>
+          <option id="2hcinq">2h</option>
+        </select>
+        <br>
+        <input type="text" placeholder="nom" id="nomcinq" class="nom" onchange="ajour('cinq')">
+        <input type="text" placeholder="prénom" id="prenomcinq" maxlength="1" class="prenom" onchange="ajour('cinq')">
+        <br>
+        <input type="number" pattern="[0-9]*" id="sallecinq" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="salle" class="salle" max="340" min="0" onchange="ajour('cinq')"><input type="text" placeholder="groupe" class="salle hide" id="grpcinq" onchange="ajour('cinq')">
+      </div>
+      <div id="listesix" class="oua hide">
+        <select id="courssix" onchange="ajour('six')">
+          <option>H-G</option>
+          <option>Anglais</option>
+          <option>Allemand</option>
+          <option>Espagnol</option>
+          <option>HGGSP</option>
+          <option>SVT</option>
+          <option>ES</option>
+          <option>Philo</option>
+          <option>EPS</option>
+          <option>EMC</option>
+          <option>MATH</option>
+          <option>SES</option>
+          <option>Pas de cours</option>
+        </select>
+        <select id="dureesix" onchange="ajour('six')">
+          <option>1h</option>
+          <option id="2hsix">2h</option>
+        </select>
+        <br>
+        <input type="text" placeholder="nom" id="nomsix" class="nom" onchange="ajour('six')">
+        <input type="text" placeholder="prénom" id="prenomsix" maxlength="1" class="prenom" onchange="ajour('six')">
+        <br>
+        <input type="number" pattern="[0-9]*" id="sallesix" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="salle" class="salle" max="340" min="0" onchange="ajour('six')"><input type="text" placeholder="groupe" class="salle hide" id="grpsix" onchange="ajour('six')">
+      </div>
+      <div id="listesept" class="oua hide">
+        <select id="courssept" onchange="ajour('sept')">
+          <option>H-G</option>
+          <option>Anglais</option>
+          <option>Allemand</option>
+          <option>Espagnol</option>
+          <option>HGGSP</option>
+          <option>SVT</option>
+          <option>ES</option>
+          <option>Philo</option>
+          <option>EPS</option>
+          <option>EMC</option>
+          <option>MATH</option>
+          <option>SES</option>
+          <option>Pas de cours</option>
+        </select>
+        <select id="dureesept" onchange="ajour('sept')">
+          <option>1h</option>
+          <option id="2hsept">2h</option>
+        </select>
+        <br>
+        <input type="text" placeholder="nom" id="nomsept" class="nom" onchange="ajour('sept')">
+        <input type="text" placeholder="prénom" id="prenomsept" maxlength="1" class="prenom" onchange="ajour('sept')">
+        <br>
+        <input type="number" pattern="[0-9]*" id="sallesept" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="salle" class="salle" max="340" min="0" onchange="ajour('sept')"><input type="text" placeholder="groupe" class="salle hide" id="grpsept" onchange="ajour('sept')">
+      </div>
+      <div id="listehuit" class="oua hide">
+        <select id="courshuit" onchange="ajour('huit')">
+          <option>H-G</option>
+          <option>Anglais</option>
+          <option>Allemand</option>
+          <option>Espagnol</option>
+          <option>HGGSP</option>
+          <option>SVT</option>
+          <option>ES</option>
+          <option>Philo</option>
+          <option>EPS</option>
+          <option>EMC</option>
+          <option>MATH</option>
+          <option>SES</option>
+          <option>Pas de cours</option>
+        </select>
+        <select id="dureehuit" onchange="ajour('huit')">
+          <option>1h</option>
+          <option id="2hhuit">2h</option>
+        </select>
+        <br>
+        <input type="text" placeholder="nom" id="nomhuit" class="nom" onchange="ajour('huit')">
+        <input type="text" placeholder="prénom" id="prenomhuit" maxlength="1" class="prenom" onchange="ajour('huit')">
+        <br>
+        <input type="number" pattern="[0-9]*" id="sallehuit" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="salle" class="salle" max="340" min="0" onchange="ajour('huit')"><input type="text" placeholder="groupe" class="salle hide" id="grphuit" onchange="ajour('huit')">
+      </div>
+      <div id="listeneuf" class="oua hide">
+        <select id="coursneuf" onchange="ajour('neuf')">
+          <option>H-G</option>
+          <option>Anglais</option>
+          <option>Allemand</option>
+          <option>Espagnol</option>
+          <option>HGGSP</option>
+          <option>SVT</option>
+          <option>ES</option>
+          <option>Philo</option>
+          <option>EPS</option>
+          <option>EMC</option>
+          <option>MATH</option>
+          <option>SES</option>
+          <option>Pas de cours</option>
+        </select>
+        <select id="dureeneuf" onchange="ajour('neuf')">
+          <option>1h</option>
+          <option id="2hneuf">2h</option>
+        </select>
+        <br>
+        <input type="text" placeholder="nom" id="nomneuf" class="nom" onchange="ajour('neuf')">
+        <input type="text" placeholder="prénom" id="prenomneuf" maxlength="1" class="prenom" onchange="ajour('neuf')">
+        <br>
+        <input type="number" pattern="[0-9]*" id="salleneuf" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="salle" class="salle" max="340" min="0" onchange="ajour('neuf')"><input type="text" placeholder="groupe" class="salle hide" id="grpneuf" onchange="ajour('neuf')">
+      </div>
+    </section>
+    <script src="cdp.js"></script>
+  </body>
+</html>

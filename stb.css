@@ -1,0 +1,28 @@
+.cas__header-baseline {
+  display: none;
+}
+
+.cas__header {
+  background-color: #fff;
+}
+
+.cas--blocking-connexion .cas__panel {
+  background-image: url("queue.svg");
+  background-position: center bottom;
+  background-repeat: repeat-x;
+  background-size: auto 7rem;
+  padding-bottom: 8rem;
+}
+
+.cas--blocking-connexion {
+  background-image: none;
+}
+
+.cas__partners {
+  margin: 0 -1rem;
+  text-align: center;
+}
+
+.cas__partners li {
+  margin: 0 1rem 2.5rem;
+}
